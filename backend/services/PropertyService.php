@@ -1,29 +1,26 @@
 <?php
-
-require_once __DIR__ . '/BaseService.php';
-require_once __DIR__ . '/../dao/PropertyDAO.php';
-
-class PropertyService extends BaseService
+   require_once __DIR__ .'/BaseService.php';
+   require_once __DIR__ .'/PropertyDAO.php';
+ 
+   class PropertyService extends BaseService
 {
     private $propertyDAO;
+    public function __ construc()
 
-    public function __construct()
     {
-        $this->propertyDAO = new PropertyDAO();
+        $this-> property DAO = new PropertyDAO();
     }
-
     public function getAll()
     {
-        return $this->propertyDAO->getAll();
+        return $this->propertyDAO-> getAll();
     }
-
-    public function add($name, $description)
+    public function add ($name, $description)
     {
-        // name must have at least 3 characters
-        if (mb_strlen(trim($name)) < 3) {
-            throw new Exception("Name must have at least 3 characters");
+        if (nb_strlen(trim($name))<3){
+            throw newExeption("Name must have at least 3 characters");
         }
-
-        return $this->propertyDAO->add($name, $description);
+        return $this-> propertyDAO->add($name, $description);
     }
+
+
 }
